@@ -1,38 +1,33 @@
-*{
-    box-sizing: border-box;
-}
- 
-body {
-    font-family: 'Kanit', sans-serif;
-    background-color: #2B2D42;
-}
-
-.logo{
-    display: block;
-    width: 60px;
-    height: 60px;
-    padding: 10px;
-    margin: 0 auto;
-}
-.logo img{
+.encabezdo{
+    background: var(--color-encabezado);
     width: 100%;
-}
-.container-titulo{
-    background: #dfe7fd;
-    width: 100vw;
+    padding: 2% 1% 2% 1%;
 }
 .titulo{
     display: block;
-    padding: 10px 0 0 0;
     text-align: center;
-    font-weight: 600;
-    font-size: 2em;
-    text-decoration: none;
-    color: #2B2D42;
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--color-titulo);
+}
+
+.entrada-tablero {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    border: 3px solid var(--verdeA);
+    border-radius: 8px;
+    background-color: var(--color-body);
+    color: #FFF;
+    font-family: var(--kanit);
+    font-size: 1rem;
+    font-weight: 300;
+    padding: .75rem;
+    text-align: center;
 }
 #mWin{
-    color: palegreen;
-    font-family: 'Kanit', sans-serif;
+    color: var(--verde);
+    font-family: var(--kanit);
     font-weight: 600;
     font-size: 3em;
     text-align: center;
@@ -45,16 +40,16 @@ body {
 @keyframes zoom {
     from {
         font-size: 0;
-        color: #2B2D42;
+        color: var(--color-body);
     }
     to {
-        color: palegreen;
+        color: var(--verde);
         font-size: 3em;
     }
   }
   #mLose{
-    color: salmon;
-    font-family: 'Kanit', sans-serif;
+    color: var(--salmon);
+    font-family: var(--kanit);
     font-weight: 600;
     font-size: 3em;
     text-align: center;
@@ -66,10 +61,10 @@ body {
 
 @keyframes colored {
     from {
-        color: #2B2D42;
+        color: var(--color-body);
     }
     to {
-        color: salmon;
+        color: var(--salmon);
     }
   }
   
@@ -95,7 +90,7 @@ canvas {
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    font-family: 'Kanit', sans-serif;
+    font-family: var(--kanit);
 
     transition: 0.5s all;
     cursor: pointer;
@@ -106,13 +101,13 @@ canvas {
 }
 
 #startBtn{
-    background-color: #f72585;
+    background-color: var(--fiusha);
 }
 #newWordBtn{
-    background-color: #5bc0be;
+    background-color: var(--verdeA);
 }
 #inputBtn{
-    background-color: #5bc0be;
+    background-color: var(--verdeA);
 }
 
 #form-Words{
@@ -120,14 +115,14 @@ canvas {
 }
 #inputWord{
     margin: 0;
-    border: 3px palegreen solid;
+    border: 3px var(--verde) solid;
     border-radius: 8px;
     padding: 5px;
-    background-color: #2B2D42;
+    background-color: var(--color-body);
     font-size: 20px;
-    font-family: 'Kanit', sans-serif;
+    font-family: var(--kanit);
     text-align: center;
-    color: white;
+    color: var(--color-blanco);
 }
 #inputWord:focus {
     outline: none;
@@ -136,4 +131,12 @@ canvas {
 #inputWord, #inputBtn{
     display: block;
     margin: 20px auto;
+}
+
+@media only screen 
+and (min-width: 280px)
+and (max-width: 480px) { 
+    .container__canvas canvas{
+        width: 100%;
+    }
 }

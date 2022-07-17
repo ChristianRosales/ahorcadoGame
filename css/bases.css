@@ -1,0 +1,26 @@
+:root{
+    --color-encabezado: #dfe7fd;
+    --color-blanco: #FFFFFF;
+    --color-body:#2B2D42;
+    --color-titulo: #2b2d42;
+    --color-texto: #8d99ae;
+    --verde: palegreen;
+    --salmon: salmon;
+    --fiusha: #f72585;
+    --verdeA: #5bc0be;
+    --kanit: 'Kanit', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: var(--kanit);
+    background-color: var(--color-body);
+    margin: 0px;
+    padding: 0px;
+
+}
+.principal {
+    padding-top: 5%;
+    padding-right: 6%;
+    padding-left: 6%;
+}
