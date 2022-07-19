@@ -116,11 +116,11 @@ const ingresarLetra = letra => {
 const letterEvent = event => {
     let letraTecleada = event.key;
     //console.log(letraTecleada);
-    var validado = /^[A-Z]+$/.test(letraTecleada);
+    var validado = /^[a-zA-Z]+$/.test(letraTecleada);
     if(validado == true){
-        ingresarLetra(letraTecleada);
+        ingresarLetra(letraTecleada.toUpperCase());
     }else{
-        alert("SOLO MAYUSCULAS ENTRE A-Z")
+        alert("SOLO LETRAS ENTRE A-Z")
     }
     inputTablero.value = "";
 };
