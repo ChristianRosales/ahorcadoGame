@@ -17,10 +17,9 @@ body {
     background-color: var(--color-body);
     margin: 0px;
     padding: 0px;
-
 }
 .principal {
-    padding-top: 5%;
+    padding-top: 2%;
     padding-right: 6%;
     padding-left: 6%;
 }

@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" rel="stylesheet">
 <body>
     <header class="encabezdo">
-            <h1 class="titulo">HANGMAN GAME</h1>
+            <a class="titulo" href="https://github.com/ChristianRosales">AHORCADO PAISES</a>
     </header>
     <main class="principal">
         <h2 id="mWin" hidden>¡ GANASTE !</h2>
@@ -23,12 +23,16 @@
             <div class="container__canvas">
                 <canvas id="canvas"></canvas>
             </div>
+            <div id="correctaContenedor" class="container__palabra-oculta" hidden>
+                <legend class="leyenda">La palabra correcta es: </legend>
+                <legend id="pOculta" class="palabra-correcta"></legend>
+            </div>
             <div class="btn-container">
                 <button id="startBtn" class="btn">INICIAR</button>
                 <button id="newWordBtn" class="btn">AGREGAR PALABRA</button>            
             </div>  
-            <div class="container__tablero" hidden>
-                <input type="text" placeholder="Pulse aquí" class="entrada-tablero">
+            <div class="container__tablero" id="entradaCont" hidden>
+                <input type="text" id="entradaT" placeholder="INGRESA UNA LETRA AQUÍ ⬇" class="entrada-tablero">
             </div>              
         </section>
         <section class="container">

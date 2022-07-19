@@ -5,6 +5,10 @@ var inputBotton = document.getElementById('inputBtn');
 var form = document.getElementById('form-Words');
 var messageWin = document.getElementById('mWin');
 var messageLose = document.getElementById('mLose');
+var entradaTablero = document.getElementById('entradaCont');
+var inputTablero = document.getElementById('entradaT');
+var contCorrecta = document.getElementById('correctaContenedor');
+var palabraOculta = document.getElementById('pOculta');
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 //seleccionar los elementos html a utilizar y limpiar el canvas
@@ -62,6 +66,8 @@ const letraIncorrecta = ()=>{
     if(errores == 6){
         messageLose.hidden = false;
         endGame();
+        contCorrecta.style.display = 'block';
+        palabraOculta.innerText = palabraSeleccionada.join("");
         //alert("PERDISTE")
     }
         
@@ -71,6 +77,7 @@ const endGame = () => {
     document.removeEventListener('keydown', letterEvent);
     startButton.style.display = 'block';
     wordButton.style.display = 'block';
+    entradaTablero.style.display = 'none';
 }
 //si la letra ingresada esta en la palabra oculta la dibuja en la posicion correspondiente, muestra mensaje ganaste al completar la palabra
 const letraCorrecta = letra => {
@@ -115,7 +122,7 @@ const letterEvent = event => {
     }else{
         alert("SOLO MAYUSCULAS ENTRE A-Z")
     }
-
+    inputTablero.value = "";
 };
 //CODIGO DEL TABLERO INICIO DEL JUEGO
 //dibuja las lineas del tablero correspondientes al tamaño de la palabra oculta
@@ -153,6 +160,9 @@ const dibujarHorca = () =>{
 //funcion que vacia todas las variables que se usan y prepara el tablero
 const startGame = () => {
     canvas.style.display = 'block';
+    entradaTablero.style.display = 'block';
+    contCorrecta.style.display = 'none';
+    inputTablero.value = "";
     posicion = 100;
     letrasUsadas = [];
     guiones = []
@@ -165,7 +175,8 @@ const startGame = () => {
     dibujarHorca();
     palabraAleatoria();
     dibujarTablero(palabraSeleccionada);
-    document.addEventListener('keydown', letterEvent);
+    //document.addEventListener('keydown', letterEvent);
+    inputTablero.addEventListener('keydown', letterEvent);
 };
 //determinar si la nueva palabra ya se encuentra en el arreglo palabras si no es el caso se agrega al arreglo
 const insertarPalabra = (elemnt) => {
@@ -201,6 +212,7 @@ const inputWord = () => {
     canvas.style.display = 'none';
     startButton.style.display = 'none';
     wordButton.style.display = 'none';
+    contCorrecta.style.display = 'none';
     messageWin.hidden = true;
     messageLose.hidden = true;
     form.style.display = 'block';
