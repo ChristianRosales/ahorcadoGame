@@ -114,7 +114,8 @@ const ingresarLetra = letra => {
 };
 //captura las teclas presiondas y valida que esten entre A - Z
 const letterEvent = event => {
-    let letraTecleada = event.key;
+    //let letraTecleada = event.key;
+    let letraTecleada = String.fromCharCode(event.which || event.code );
     //console.log(letraTecleada);
     var validado = /^[a-zA-Z]+$/.test(letraTecleada);
     if(validado == true){
